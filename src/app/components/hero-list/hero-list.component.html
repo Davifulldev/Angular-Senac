@@ -1,0 +1,25 @@
+<h2>Lista De Personagens </h2>
+<br><br>
+
+<h3>Destaque : {{ heroiDestaque}}</h3>
+<p>Universo : {{ universo}}</p>
+
+
+<button [disabled]="estaDesabilitado" [title]="dicaTooltip">Ação Do Herói</button>
+
+<br><br>
+<button (click)="alternarStatus()">Alternar Status</button>
+<br><br>
+<span>Status atual: {{ativo ? "Ativo" : "Inativo"}}</span>
+<br><br>
+
+<input type="text" [(ngModel)]="heroiDestaque">
+<p>Você está editando: {{heroiDestaque}}</p>
+
+<ul>
+    <!-- O Angular cria uma tag <li> para cada item da lista -->
+    <li *ngFor="let heroi of equipe">
+        {{ heroi }}
+    
+    </li>
+</ul>
